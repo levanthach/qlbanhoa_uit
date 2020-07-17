@@ -107,15 +107,18 @@ a:active {
               <select name="loai" id="loai">
 			  <?php	
             $loaihoa = getCategory();
+ 
             foreach ($loaihoa as $value) {
-							echo  "<option value='$value[0]'>$value[1]</option>";
-						}//for						
+           
+							echo  "<option value=" .$value['Maloai']. ">" . $value['Tenloai'] . "</option>";
+						}//for	
+             		
 			?>
               </select>
             </label></td>
           </tr>
           <tr>
-            <td><p class="style10">&nbsp;Thành phần: </p></td>
+            <td><p class="style10">&nbsp;Mô tả: </p></td>
             <td><label>
               <textarea name="mo_ta" cols="35" id="mo_ta"></textarea>
             </label></td>

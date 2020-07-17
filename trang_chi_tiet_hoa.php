@@ -103,7 +103,6 @@ a:active {
                   echo"<table class='detail-item'><tr><td><img src='hinh_anh/".$hoa['hinh']."'/></td>";
                   echo"<td><br><strong>".$hoa['tenhoa']."</strong><br><i>Giá bán: </i>".number_format($hoa['dongia'])." VNĐ" ."<br><i>Thành phần chính: </i><br>".$hoa['mota']."<br><a href='index.php' >Quay về trang chính</a></td></tr></table>";
                 
-
               }
             
             }

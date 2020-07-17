@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 02, 2020 lúc 08:10 PM
+-- Thời gian đã tạo: Th7 17, 2020 lúc 05:03 PM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
--- Phiên bản PHP: 7.3.16
+-- Phiên bản PHP: 7.2.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -59,7 +59,21 @@ INSERT INTO `ctdonhang` (`sodh`, `mahoa`, `soluong`, `dongia`, `thanhtien`) VALU
 (6, 8, 1, 220000, 220000),
 (7, 13, 1, 120000, 120000),
 (7, 14, 1, 85000, 85000),
-(7, 15, 1, 100000, 100000);
+(7, 15, 1, 100000, 100000),
+(5, 2, 3, 60000, 180000),
+(10, 1, 3, 50000, 150000),
+(10, 0, 0, 0, 0),
+(10, 4, 1, 40000, 40000),
+(11, 6, 1, 65000, 65000),
+(13, 3, 3, 45000, 135000),
+(13, 2, 1, 60000, 60000),
+(13, 1, 1, 50000, 50000),
+(41, 3, 3, 45000, 135000),
+(41, 6, 1, 65000, 65000),
+(41, 4, 5, 40000, 200000),
+(42, 2, 4, 60000, 240000),
+(42, 3, 3, 45000, 135000),
+(42, 14, 1, 85000, 85000);
 
 -- --------------------------------------------------------
 
@@ -89,7 +103,13 @@ INSERT INTO `donhang` (`sodh`, `ngaydh`, `makh`, `hoten`, `diachi`, `email`, `di
 (4, '2019-05-25', 7, 'Võ Ngọc Tân', 'cmt8', 'tanvn@uit.edu.vn', '09085434333', 1),
 (5, '2019-05-25', 7, 'Võ Ngọc Tân', 'cmt8', 'tanvn@uit.edu.vn', '09085434333', 1),
 (6, '2019-06-01', 7, 'Võ Ngọc Tân', 'cmt8', 'tanvn@uit.edu.vn', '09085434333', 1),
-(7, '2019-06-01', 7, 'Võ Ngọc Tân', 'cmt8', 'tanvn@uit.edu.vn', '09085434333', 1);
+(7, '2019-06-01', 7, 'Võ Ngọc Tân', 'cmt8', 'tanvn@uit.edu.vn', '09085434333', 1),
+(26, '2020-07-15', 9, 'Lê Văn Thạch', 'EaDun, Ea Kênh', 'lethach150699@gmail.com', '0377026186', 1),
+(37, '2020-07-15', 9, 'Lê Văn Thạch', 'EaDun, Ea Kênh', 'lethach150699@gmail.com', '0377026186', 1),
+(38, '2020-07-15', 9, 'Lê Văn Thạch', 'EaDun, Ea Kênh', 'lethach150699@gmail.com', '0377026186', 1),
+(39, '2020-07-15', 9, 'Lê Văn Thạch', 'EaDun, Ea Kênh', 'lethach150699@gmail.com', '0377026186', 1),
+(40, '2020-07-15', 9, 'Lê Văn Thạch', 'EaDun, Ea Kênh', 'lethach150699@gmail.com', '0377026186', 1),
+(42, '2020-07-17', 11, 'Nguyễn Văn A', 'Đông Hòa - Dĩ An', 'annguyen@gmail.com', '0124578963', 1);
 
 -- --------------------------------------------------------
 
@@ -167,7 +187,8 @@ INSERT INTO `khachhang` (`Makh`, `TenDN`, `MatKhau`, `HoTen`, `DiaChi`, `DienTho
 (4, 'dlthien', 'dlthien', 'Đỗ Lâm Thiên', '357 Lê Hồng Phong Q.10', '0903123456', 'dlthien@hcmuns.edu.vn'),
 (5, 'thanh', 'thanh', 'Nguyễn Ngọc Thanh', '357 Lê Hồng Phong Q.10', '0903456789', 'lthanh@hcmuns.edu.vn'),
 (7, 'vntan', '123', 'Võ Ngọc Tân', 'cmt8', '09085434333', 'tanvn@uit.edu.vn'),
-(9, 'thach', 'zxc', 'Lê Văn Thạch', 'EaDun, Ea Kênh', '0377026186', 'lethach150699@gmail.com');
+(9, 'thach', 'zxc', 'Lê Văn Thạch', 'EaDun, Ea Kênh', '0377026186', 'lethach150699@gmail.com'),
+(11, 'admin', '123456', 'Nguyễn Văn A', 'Đông Hòa - Dĩ An', '0124578963', 'annguyen@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -232,19 +253,19 @@ ALTER TABLE `loaihoa`
 -- AUTO_INCREMENT cho bảng `donhang`
 --
 ALTER TABLE `donhang`
-  MODIFY `sodh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `sodh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT cho bảng `hoa`
 --
 ALTER TABLE `hoa`
-  MODIFY `mahoa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `mahoa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT cho bảng `khachhang`
 --
 ALTER TABLE `khachhang`
-  MODIFY `Makh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `Makh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `loaihoa`

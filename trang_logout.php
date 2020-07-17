@@ -103,7 +103,9 @@ a:active {
         <td >
 		      <p class="style5">Bạn <span class="log_username"><?php echo $_SESSION['username'] ?></span> đã đăng xuất! <br>
           Hẹn gặp bạn lần sau.</p>
-          <?php unset($_SESSION['username'])?>
+          <?php 
+            unset($_SESSION['username']);
+          ?>
         </td>
       </tr>
     </table>      <p>&nbsp;</p>    </td>

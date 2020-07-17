@@ -5,7 +5,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Cua hang Hoa Dep</title>
 <style type="text/css">
-<!--
 .style2 {
   color: #000099;
   font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -47,7 +46,7 @@ a:active {
 .log_username {
   text-decoration: underline;
 }
--->
+
 </style>
 </head>
 
@@ -99,13 +98,47 @@ a:active {
       <tr>
         <td>    </td>
       </tr>
+      <?php 
+          $get_makh = getAccount($_SESSION['username']);
+          foreach ($get_makh as $value) {
+            $makh = $value['Makh'];
+          }
+
+         
+          if(isset($_POST['dathang'])){
+            if($_POST['ho_ten'] != '' && $_POST['dia_chi'] != '' && $_POST['email'] != '' && $_POST['dien_thoai'] != ''){
+                 
+              $sohd = addOrder($makh);
+  
+              foreach ($_SESSION['cart'] as $cart) {
+                  $mahoa = $cart['id'];
+                  $sl = $cart['qty'];
+                  $dongia = $cart['price'];
+                  $thanhtien = $cart['qty'] * $cart['price'];
+                  addOrderDetail($sohd,$mahoa, $sl, $dongia, $thanhtien);
+              }
+            }
+            else
+            {
+              echo "Bạn phải nhập đủ dữ liệu";
+            }
+          }
+      ?>
       <tr>
-        <td >
+        <td>
           <p class="style5" align="center">
-            Chúng tôi sẽ giao hàng cho bạn tại địa chỉ:<br>
+            Chúng tôi sẽ giao hàng cho bạn 
+             <?php 
+                if(isset($_POST['dathang'])){
+                  if(!empty($_POST['ho_ten'])){
+                    echo $_POST['ho_ten'];
+                  }
+                }
+             ?>
+            <br> Tại địa chỉ:
             <?php 
-                if(isset($_POST['submit_gh'])){
-                  if(isset($_POST['dia_chi']) && $_POST['dia_chi'] != ''){
+                if(isset($_POST['dathang'])){
+                  if(!empty($_POST['dia_chi'])){
                     echo $_POST['dia_chi'];
                   }
                 }
